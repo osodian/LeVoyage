@@ -1,0 +1,32 @@
+<div class="">
+  <h1>Create new Trip</h1>
+
+  <div class="">
+    <%= form_for(@trip) do |t| %>
+      <div class="form-group">
+        <%= t.label :destination %>
+        <%= t.text_field :destination, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= t.label :details %>
+        <%= t.text_area :details, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= t.label :number_of_people %>
+        <%= t.text_field :number_of_people, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= t.label :price %>
+        <%= t.text_field :price, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= t.label :user %>
+        <%= t.text_field :user, class: 'form-control' %>
+      </div>
+      <%= t.submit class: 'button' %>
+      <%end%>
+  </div>
+</div>

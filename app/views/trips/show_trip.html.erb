@@ -1,0 +1,10 @@
+<div class="">
+  <div>
+    <h1><%=@trip.destination%> </h1>
+    <button type="button" class="btn btn-outline-primary"><%=link_to 'Book Trip', new_path(@booking)%></button>
+  </div>
+  <p><%=@trip.details%></p>
+  <p><%=@trip.number_of_people%></p>
+  <p><%=@trip.price%></p>
+  <%=link_to 'Back to home page', home_path%>
+</div>
