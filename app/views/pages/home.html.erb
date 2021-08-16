@@ -1,12 +1,51 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%# rails generate migration AddChefNameToRestaurants chef_name:string %>
-<%= link_to 'Log in', new_user_session_path %>
-<br>
-<%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="LeVoygae" content="">
 
-rails g controller trips
-rails g controller bookings
-<%# rails generate model Trip destination:string price:integer number_of_people:integer details:text user:references
+    <!-- Bootstrap CSS -->
 
-rails generate model Booking date:datetime trip:references user:references %>
+  </head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">LeVoyage</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Become a host <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Popular Destinations</a>
+      </li>
+    </ul>
+      <button class="btn btn-primary my-2 my-sm-0 m-3 p-2" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
+      <button class="btn btn-primary my-2 my-sm-0 m-3 p-2" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+  </div>
+</nav>
+<div class="subheader">
+  <h1>Welcome to LeVoyage</h1>
+  <p>Your dream vacation is one click away</p>
+</div>
+<form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Location">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Guests">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Check-in & Check-out">
+    </div>
+    <button class="btn btn-primary my-2 my-sm-0 m-3 p-2" type="submit">Search</button>
+  </div>
+</form>
+</body>
+
