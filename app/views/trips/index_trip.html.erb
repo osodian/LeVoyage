@@ -1,0 +1,17 @@
+<div class="" >
+  <h1>All Trips</h1>
+  <p>Browse through the library:</p>
+  <ol>
+  <% @trips.each do |trip|%>
+    <li> Destination: <%=link_to trip.destination, trip_path(trip)%>
+    <br>
+    <%= link_to 'Delete here', trip_path(trip),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    <p>____________</p>
+    </li>
+  <% end %>
+  </ol>
+
+  <button type="button" class="button"><%=link_to 'Add Trip', trips_new_path%></button>
+</div>
