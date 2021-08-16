@@ -1,13 +1,54 @@
 // Specific CSS for your home-page
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .navbar {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.below-navbar {
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-image: url("https://source.unsplash.com/random");
+  background-size: cover;
 }
 
 .subheader {
-  padding: 20px;
+  padding-top: 100px;
+  padding-bottom: 100px;
   text-align: center;
 }
 
 form {
-  padding: 20px;
+  padding: 16px;
   background-color: white;
+}
+
+form {
+  border-radius: 16px;
+}
+
+.form-control {
+cursor: pointer;
+display: block;
+border-radius: 16px;
+padding: 12px;
+}
+
+.form-control:hover {
+  background-color: rgba(240, 240, 240, 0.5);
+}
+
+.below-form {
+  margin: 40px;
+  text-align: center;
+  font-weight: bold;
 }

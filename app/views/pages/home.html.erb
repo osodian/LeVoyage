@@ -15,7 +15,6 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -25,16 +24,18 @@
         <a class="nav-link" href="#">Popular Destinations</a>
       </li>
     </ul>
-      <button class="btn btn-primary my-2 my-sm-0 m-3 p-2" type="submit">Sign-up</button>
-      <button class="btn btn-primary my-2 my-sm-0 m-3 p-2" type="submit">Login</button>
+      <button type="button" class="btn btn-outline-dark p-2 m-2" data-mdb-ripple-color="dark">Sign-Up</button>
+      <button type="button" class="btn btn-outline-dark p-2 m-2" data-mdb-ripple-color="dark">Login</button>
   </div>
 </nav>
+
+<div class="below-navbar">
 <div class="subheader">
   <h1>Welcome to LeVoyage</h1>
-  <p>Your dream vacation is one click away</p>
+  <h2>Your dream vacation is one click away</h2>
 </div>
 <form>
-  <div class="row">
+  <div class="row m-1">
     <div class="col">
       <input type="text" class="form-control" placeholder="Location">
     </div>
@@ -44,7 +45,11 @@
     <div class="col">
       <input type="text" class="form-control" placeholder="Check-in & Check-out">
     </div>
-    <button class="btn btn-primary my-2 my-sm-0 m-3 p-2" type="submit">Search</button>
+    <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark">Search</button>
   </div>
 </form>
+<div class="below-form">
+  <h2>Explore nearby!</h2>
+</div>
+</div>
 </body>
