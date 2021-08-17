@@ -23,13 +23,22 @@
   </div>
 </nav>
 
-<div class="">
+<div class="detailed">
   <div>
-    <h1><%=@trip.destination%> </h1>
+    <ul>
+      <% if @trip.photo.attached? %>
+        <li><%= cl_image_tag @trip.photo.key , height: 167, width: 300, crop: :fill %>
+      <% else %>
+        <h4>"No pictures"</h4>
+      <% end %>
+    <li><h3><%=@trip.destination%></h3></li>
     <button type="button" class="btn btn-outline-primary"><%=link_to 'Book Trip', new_booking_path(@booking)%></button>
   </div>
-  <p><%=@trip.details%></p>
-  <p><%=@trip.number_of_people%></p>
-  <p><%=@trip.price%></p>
+  <li><p><%=@trip.details%></p></li>
+  <li><p><%=@trip.number_of_people%></p></li>
+  <li><p><%=@trip.price%></p></li>
+  </ul>
   <%=link_to 'Back to home page', root_path%>
+  <br>
+  <%=link_to 'Back to List page', trips_path%>
 </div>
