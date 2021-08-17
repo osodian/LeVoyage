@@ -34,10 +34,12 @@
     <li><h3><%=@trip.destination%></h3></li>
     <button type="button" class="btn btn-outline-primary"><%=link_to 'Book Trip', new_booking_path(@booking)%></button>
   </div>
+
   <li><p><%=@trip.details%></p></li>
   <li><p><%=@trip.number_of_people%></p></li>
   <li><p><%=@trip.price%></p></li>
   </ul>
+
   <%=link_to 'Back to home page', root_path%>
   <br>
   <%=link_to 'Back to List page', trips_path%>

@@ -1,4 +1,6 @@
 class TripsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
+
   def index
     @trips = policy_scope(Trip)
   end
@@ -7,13 +9,13 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  # authorize @trip
   def new
     @trip = Trip.new
   end
 
   def create
     @trip = Trip.new(trip_params)
+    @trip.user = current_user
     if @trip.save
       redirect_to trip_path(@trip), notice: 'New Trip was created successfully!'
     else
