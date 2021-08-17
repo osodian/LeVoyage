@@ -18,7 +18,7 @@
 </nav>
 
 <div class="m-2 p-2" >
-  <h1>All Trips</h1>
+  <h3>All Trips</h3>
   <p>Browse through the library:</p>
   <ul>
   <% @trips.each do |trip|%>
@@ -31,6 +31,10 @@
       <br>
       <%= link_to 'Delete here', trip_path(trip),
       method: :delete,
+      data: { confirm: "Are you sure?" } %>
+
+      <%= link_to 'Edit here', edit_trip_path(trip),
+      method: :get,
       data: { confirm: "Are you sure?" } %>
     <p>____________</p>
     </li>

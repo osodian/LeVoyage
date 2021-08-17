@@ -17,9 +17,9 @@
   </div>
 </nav>
 <div class="m-2 p-2">
-  <h1>Create new Trip</h1>
+  <h3>Create new Trip</h3>
 
-  <div class="">
+  <div class="form">
     <%= form_for(@trip) do |t| %>
       <div class="form-group">
         <%= t.label :destination %>
@@ -45,12 +45,13 @@
         <%= t.text_field :user_id, class: 'form-control' %>
       </div>
 
-      <div class="photo">
+      <div class="photo-group">
         <%= t.label :photo %>
-        <%= t.file_field :photo, class: 'form-control' %>
+        <%= t.file_field :photo, id: 'photo' %>
       </div>
-
-      <%= t.submit class: 'button' %>
+      <div class="form-button">
+      <%= t.submit class: "btn btn-outline-dark m-3 p-2" %>
+      </div>
     <%end%>
   </div>
 </div>
