@@ -1,13 +1,13 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
+    @trips = policy_scope(Trip)
   end
 
   def show
     @trip = Trip.find(params[:id])
   end
 
-  authorize @trip
+  # authorize @trip
   def new
     @trip = Trip.new
   end
