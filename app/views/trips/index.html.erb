@@ -1,17 +1,41 @@
-<div class="" >
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">LeVoyage</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Become a host <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Popular Destinations</a>
+      </li>
+    </ul>
+      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
+      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+  </div>
+</nav>
+
+<div class="m-2 p-2" >
   <h1>All Trips</h1>
   <p>Browse through the library:</p>
-  <ol>
+  <ul>
   <% @trips.each do |trip|%>
-    <li> Destination: <%=link_to trip.destination, trip_path(trip)%>
-    <br>
-    <%= link_to 'Delete here', trip_path(trip),
+  <% if trip.photo.attached? %>
+    <li><%= cl_image_tag trip.photo.key , height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <h4>"No pictures"</h4>
+      <% end %>
+      Destination: <%=link_to trip.destination, trip_path(trip)%>
+      <br>
+      <%= link_to 'Delete here', trip_path(trip),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
     <p>____________</p>
     </li>
   <% end %>
-  </ol>
+  </ul>
 
   <button type="button" class="button"><%=link_to 'Add Trip', new_trip_path%></button>
 </div>
