@@ -11,7 +11,11 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">LeVoyage</a>
+  <%# <a class="navbar-brand" href="#">LeVoyage</a> %>
+  <div class="navbar-brand anti_link">
+    <%= link_to 'LeVoyage', root_path %>
+  </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,8 +28,10 @@
         <a class="nav-link" href="#">Popular Destinations</a>
       </li>
     </ul>
-      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
-      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+      <div class="anti_link">
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+      </div>
   </div>
 </nav>
 
@@ -52,6 +58,8 @@
   <h2>Bon Voyage!</h2>
 </div>
 </div>
+
+
 
 <!-- Footer -->
 <footer class="page-footer font-small grey">
