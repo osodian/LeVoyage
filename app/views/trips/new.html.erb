@@ -1,5 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">LeVoyage</a>
+  <%# <a class="navbar-brand" href="#">LeVoyage</a> %>
+  <div class="navbar-brand anti_link">
+    <%= link_to 'LeVoyage', root_path %>
+  </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,14 +16,17 @@
         <a class="nav-link" href="#">Popular Destinations</a>
       </li>
     </ul>
-      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
-      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+      <div class="anti_link">
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+      </div>
   </div>
 </nav>
-<div class="m-2 p-2">
-  <h1>Create new Trip</h1>
 
-  <div class="">
+<div class="m-2 p-2">
+  <h3>Create new Trip</h3>
+
+  <div class="form">
     <%= form_for(@trip) do |t| %>
       <div class="form-group">
         <%= t.label :destination %>
@@ -40,12 +47,13 @@
         <%= t.text_field :price, class: 'form-control' %>
       </div>
 
-      <div class="photo">
+      <div class="photo-group">
         <%= t.label :photo %>
-        <%= t.file_field :photo, class: 'form-control' %>
+        <%= t.file_field :photo, id: 'photo' %>
       </div>
-
-      <%= t.submit class: 'button' %>
+      <div class="form-button">
+      <%= t.submit class: "btn btn-outline-dark m-3 p-2" %>
+      </div>
     <%end%>
   </div>
 </div>

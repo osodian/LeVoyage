@@ -24,12 +24,12 @@ class TripsController < ApplicationController
   end
 
   def edit
-    @trips = Trip.find(params[:id])
+    @trip = Trip.find(params[:id])
   end
 
   def update
     @trips = Trip.find(params[:id])
-    @trips.update(trips_params)
+    @trips.update(trip_params)
     redirect_to trips_path
   end
 
