@@ -23,7 +23,7 @@
   <ul>
   <% @trips.each do |trip|%>
   <% if trip.photo.attached? %>
-    <li><%= cl_image_tag trip.photo.key , height: 300, width: 400, crop: :fill %>
+    <li><%= cl_image_tag trip.photo.key , height: 167, width: 300, crop: :fill %>
       <% else %>
         <h4>"No pictures"</h4>
       <% end %>
