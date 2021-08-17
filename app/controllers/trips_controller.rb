@@ -7,6 +7,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
+  authorize @trip
   def new
     @trip = Trip.new
   end
