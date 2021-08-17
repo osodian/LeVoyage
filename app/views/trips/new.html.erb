@@ -26,6 +26,7 @@
         <%= t.label :user_id %>
         <%= t.text_field :user_id, class: 'form-control' %>
       </div>
+      <%= f.input :photo, as: :file %>
       <%= t.submit class: 'button' %>
       <%end%>
   </div>

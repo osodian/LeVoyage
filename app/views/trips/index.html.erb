@@ -1,8 +1,13 @@
 <div class="" >
   <h1>All Trips</h1>
   <p>Browse through the library:</p>
-  <ol>
+  <ul>
   <% @trips.each do |trip|%>
+  <% if list.photo.attached? %>
+            <%= cl_image_tag list.photo.key , height: 300, width: 400, crop: :fill %>
+        <% else %>
+            <h4>"No pictures"</h4>
+        <% end %>
     <li> Destination: <%=link_to trip.destination, trip_path(trip)%>
     <br>
     <%= link_to 'Delete here', trip_path(trip),
@@ -11,7 +16,7 @@
     <p>____________</p>
     </li>
   <% end %>
-  </ol>
+  </ul>
 
   <button type="button" class="button"><%=link_to 'Add Trip', new_trip_path%></button>
 </div>
