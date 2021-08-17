@@ -1,5 +1,9 @@
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">LeVoyage</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%# <a class="navbar-brand" href="#">LeVoyage</a> %>
+  <div class="navbar-brand anti_link">
+    <%= link_to 'LeVoyage', root_path %>
+  </div>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -12,34 +16,49 @@
         <a class="nav-link" href="#">Popular Destinations</a>
       </li>
     </ul>
-      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
-      <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+      <div class="anti_link">
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%=link_to 'Add Trip', new_trip_path%></button>
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
+      </div>
   </div>
 </nav>
 
-<div class="m-2 p-2" >
-  <h3>All Trips</h3>
-  <p>Browse through the library:</p>
-  <ul>
-  <% @trips.each do |trip|%>
-  <% if trip.photo.attached? %>
-    <li><%= cl_image_tag trip.photo.key , height: 167, width: 300, crop: :fill %>
-      <% else %>
-        <h4>"No pictures"</h4>
-      <% end %>
-      Destination: <%=link_to trip.destination, trip_path(trip)%>
-      <br>
-      <%= link_to 'Delete here', trip_path(trip),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
 
-      <%= link_to 'Edit here', edit_trip_path(trip),
-      method: :get,
-      data: { confirm: "Are you sure?" } %>
-    <p>____________</p>
-    </li>
-  <% end %>
-  </ul>
+<div class="background_all_trips">
+  <div class="content">
+    <div class="p-2" >
+      <h1 class="all_trips">All Trips</h1>
+      <p class="all_trips" id="all_trips_two">Browse through the library</p>
 
-  <button type="button" class="button"><%=link_to 'Add Trip', new_trip_path%></button>
+
+      <div class="cards">
+        <% @trips.each do |trip|%>
+
+        <div class="card">
+
+
+          <% if trip.photo.attached? %>
+            <li><%= cl_image_tag trip.photo.key , height: 167, width: 300, crop: :fill %>
+              <% else %>
+                <h4>"No pictures"</h4>
+              <% end %>
+              Destination: <%=link_to trip.destination, trip_path(trip)%>
+              <br>
+              <%= link_to 'Delete here', trip_path(trip),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+              <%= link_to 'Edit here', edit_trip_path(trip),
+              method: :get,
+              data: { confirm: "Are you sure?" } %>
+            <%# <p>____________</p> %>
+            </li>
+          <% end %>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
 </div>
