@@ -34,27 +34,28 @@
 
       <div class="cards">
         <% @trips.each do |trip|%>
-
-        <div class="card">
-
-
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path trip.photo.key, height: 300, crop: :fill %>')">
           <% if trip.photo.attached? %>
-            <li><%= cl_image_tag trip.photo.key , height: 167, width: 300, crop: :fill %>
+            <%# <li><%= cl_image_tag trip.photo.key, height: 167, width: 300, crop: :fill %>
               <% else %>
                 <h4>"No pictures"</h4>
               <% end %>
-              Destination: <%=link_to trip.destination, trip_path(trip)%>
+              <div class="anti_link">
+              <p id="destination"><%=link_to trip.destination, trip_path(trip)%></p>
               <br>
-              <%= link_to 'Delete here', trip_path(trip),
+              <div id="info"><%= link_to 'Delete here', trip_path(trip),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
-              <%= link_to 'Edit here', edit_trip_path(trip),
+              <div class="info"><%= link_to 'Edit here', edit_trip_path(trip),
               method: :get,
               data: { confirm: "Are you sure?" } %>
+              </div>
+              </div>
+              </div>
             <%# <p>____________</p> %>
             </li>
-          <% end %>
         </div>
+        <% end %>
 
       </div>
 
