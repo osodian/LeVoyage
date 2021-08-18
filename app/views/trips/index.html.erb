@@ -17,6 +17,7 @@
       </li>
     </ul>
       <div class="anti_link">
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%=link_to 'Bookings', bookings_path%></button>
         <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%=link_to 'Add Trip', new_trip_path%></button>
         <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
         <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
@@ -30,11 +31,11 @@
     <div class="p-2" >
       <h1 class="all_trips">All Trips</h1>
       <p class="all_trips" id="all_trips_two">Browse through the library</p>
-
-
       <div class="cards">
         <% @trips.each do |trip|%>
+
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path trip.photo.key, height: 300, crop: :fill %>')">
+
           <% if trip.photo.attached? %>
             <%# <li><%= cl_image_tag trip.photo.key, height: 167, width: 300, crop: :fill %>
               <% else %>

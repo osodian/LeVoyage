@@ -17,6 +17,7 @@
       </li>
     </ul>
       <div class="anti_link">
+        <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%=link_to 'Bookings', bookings_path%></button>
         <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log in', new_user_session_path %></button>
         <button type="button" class="btn btn-outline-dark m-3 p-2" data-mdb-ripple-color="dark" type="submit"><%= link_to 'Log out', destroy_user_session_path, method: :delete %></button>
       </div>
@@ -39,7 +40,7 @@
     <div class="col">
       <input type="text" class="form-control" placeholder="Check-in & Check-out">
     </div>
-    <button type="button" class="btn btn-outline-dark" data-mdb-ripple-color="dark"><%= link_to 'Search', trips_path %></button>
+    <button type="button" class="anti_link btn btn-outline-dark" data-mdb-ripple-color="dark"><%= link_to 'Search', trips_path %></button>
   </div>
 </form>
 <div class="below-form">

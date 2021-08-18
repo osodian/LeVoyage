@@ -23,24 +23,30 @@
   </div>
 </nav>
 
-<div class="detailed">
-  <div>
-    <ul>
-      <% if @trip.photo.attached? %>
-        <li><%= cl_image_tag @trip.photo.key , height: 167, width: 300, crop: :fill %>
-      <% else %>
-        <h4>"No pictures"</h4>
-      <% end %>
-    <li><h3><%=@trip.destination%></h3></li>
-    <button type="button" class="btn btn-outline-primary"><%=link_to 'Book Trip', new_trip_booking_path(@trip), data: { confirm: "Are you sure?" }%></button>
-  </div>
 
-  <li><p><%=@trip.details%></p></li>
-  <li><p><%=@trip.number_of_people%></p></li>
-  <li><p><%=@trip.price%></p></li>
-  </ul>
+<p id="notice"><%= notice %></p>
 
+<%# LOUIS: %>
+<div class="anti_link" >
+  <h1>My bookings</h1>
+  <ol>
+  <% @bookings.each do |booking|%>
+    <li><%= link_to booking.trip.destination, booking_path(booking) %>
+    <br>
+    <%=link_to booking.date, booking_path(booking)%>
+    <br>
+    <%= link_to 'Delete here', booking_path(booking),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+    <p>____</p>
+    </li>
+  <% end %>
+  </ol>
+<div class="anti_link">
   <%=link_to 'Back to home page', root_path%>
   <br>
   <%=link_to 'Back to List page', trips_path%>
+</div>
+
+  <%# <button type="button" class="button"><%=link_to 'See other available Trips', trips_path%>
 </div>
