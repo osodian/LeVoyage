@@ -3,6 +3,15 @@ class TripsController < ApplicationController
 
   def index
     @trips = policy_scope(Trip)
+
+    @markers = @trips.geocoded.map do |trip|
+      {
+        lat: trip.latitude,
+        lng: trip.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { trip: trip })
+        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+      }
+    end
   end
 
   def show
