@@ -41,26 +41,19 @@
 
   </div>
 </nav>
+
 <div class="p-2 text-center bookings_background" >
-  <h1 class="">All Trips</h1>
-  <div class="col" id="">
-          <%= form_tag trips_path, method: :get do %>
-            <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a Location"%>
-            <%= submit_tag "Search" %>
-          <% end %>
-        </div>
+<h1 class="">All Trips</h1>
+    <div class="col" id="">
+      <%= form_tag trips_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a Location"%>
+        <%= submit_tag "Search" %>
+      <% end %>
+    </div>
 </div>
 
-
-<h4 class="all_trips p-3">All Trips</h4>
 <div class="map_align">
-  <div class="">
-    <div class="">
-      <div class="background_all_trips" style="width: 1000px;">
-
   <div class="background_all_trips">
-
-
 
       <div class="cards">
         <% @trips.each do |trip|%>
@@ -73,7 +66,6 @@
                 <button class="anti_link btn" id="best_buttons_two" data-mdb-ripple-color="dark" id="destination"><%=link_to trip.destination, trip_path(trip)%></button>
               <div class="delet_and_edit">
                 <button class="anti_link btn" id="info delete_edit" ><%= link_to 'Delete here', trip_path(trip),
-
                   method: :delete,
                   data: { confirm: "Are you sure?" }%></button>
                 <button class="anti_link btn" id="info delete_edit" ><%= link_to 'Edit here', edit_trip_path(trip),
@@ -83,8 +75,8 @@
             </div>
           </div>
         <% end %>
-      </div>
 
+      </div>
   </div>
 
   <div id="map"
@@ -93,9 +85,9 @@
   </div>
 </div>
 
-
-<!-- Footer -->
-<footer class="page-footer font-small grey">
+<div>
+  <!-- Footer -->
+  <footer class="page-footer font-small grey">
 
   <!-- Footer Links -->
   <div class="container text-center text-md-left">
@@ -202,9 +194,10 @@
   <!-- Copyright -->
   <!-- Copyright -->
 
-</footer>
-  <div class="footer-copyright text-center py-3">© 2021 Copyright:
-    <a href="https://LeConciergeINC.com">LeConciergeINC.com</a>
-  </div>
-<!-- Footer -->
-</body>
+  </footer>
+    <div class="footer-copyright text-center py-3">© 2021 Copyright:
+      <a href="https://LeConciergeINC.com">LeConciergeINC.com</a>
+    </div>
+  <!-- Footer -->
+  </body>
+</div>
