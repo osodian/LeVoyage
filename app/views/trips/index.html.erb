@@ -4,9 +4,10 @@
     <%= link_to 'LeVoyage', root_path %>
   </div>
 
-  <button class="navbar-toggler" type="button" raildata-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <button class="navbar-toggler" type="button" raildata-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
     <ul class="navbar-nav mr-auto">
@@ -17,6 +18,7 @@
         <a class="nav-link" href="#">Popular Destinations</a>
       </li>
     </ul>
+
     <div class="nav-item grey anti_link m-3">
       <%=link_to 'Back to home page', root_path%>
     </div>
@@ -37,7 +39,6 @@
       <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
     </div>
 
-
   </div>
 </nav>
 <div class="p-2 text-center bookings_background" >
@@ -51,58 +52,42 @@
 </div>
 
 
+<h4 class="all_trips p-3">All Trips</h4>
 <div class="map_align">
   <div class="">
     <div class="">
       <div class="background_all_trips" style="width: 1000px;">
 
-
-        <div class="content">
-      <div class="row m-1">
+  <div class="background_all_trips">
 
 
 
-
-
-
-    </div>
-  </div>
-
-        <div class="cards">
-          <% @trips.each do |trip|%>
-
-            <% if trip.photo.attached? %>
-              <%# <li><%= cl_image_tag trip.photo.key, height: 167, width: 300, crop: :fill %>
-              <div class=" card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path trip.photo.key, height: 300, crop: :fill %>')">
-                <% else %>
-                  <h4>"No pictures"</h4>
-                <% end %>
-                <div class="anti_link">
-                  <button type="button" id="best_buttons_two"class="anti_link btn" data-mdb-ripple-color="dark" id="destination"><%=link_to trip.destination, trip_path(trip)%></button>
-                <br>
-                <div id="info delete_edit" class="left_bottom"><%= link_to 'Delete here', trip_path(trip),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-                <div class="info delete_edit"><%= link_to 'Edit here', edit_trip_path(trip),
-                  method: :get,
-                  data: { confirm: "Are you sure?" } %>
-                </div>
-                </div>
-                </div>
-              <%# <p>____________</p> %>
-              </li>
-          </div>
+      <div class="cards">
+        <% @trips.each do |trip|%>
+          <% if trip.photo.attached? %>
+            <div class=" card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path trip.photo.key, height: 300, crop: :fill %>')">
+          <% else %>
+            <h4>"No pictures"</h4>
           <% end %>
+            <div class="card_funitions">
+                <button class="anti_link btn" id="best_buttons_two" data-mdb-ripple-color="dark" id="destination"><%=link_to trip.destination, trip_path(trip)%></button>
+              <div class="delet_and_edit">
+                <button class="anti_link btn" id="info delete_edit" ><%= link_to 'Delete here', trip_path(trip),
 
-        </div>
-
-
+                  method: :delete,
+                  data: { confirm: "Are you sure?" }%></button>
+                <button class="anti_link btn" id="info delete_edit" ><%= link_to 'Edit here', edit_trip_path(trip),
+                  method: :get,
+                  data: { confirm: "Are you sure?" }%></button>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-    </div>
+
   </div>
 
   <div id="map"
-      style="width: 500px; height: 800px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
