@@ -10,10 +10,44 @@
   text-align: center;
 }
 
-.btn {
-  font-size: 20px;
+#best_buttons {
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
+#best_buttons_two {
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+  margin-left: 5px;
+  width: 250px;
+
+}
+
+
+#btn::after {
+  box-shadow: 30px 30px 30px 3px rgba(0, 0, 0, 0.2);
+  color: #DEDBD2;
+  background-color: yellow;
+}
+
+.btn {
+  font-size: 20px;
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  color: #aaaaaa;
+  border-radius: 25px;
+}
+#nav_bar_button {
+  font-size: 15px;
+  // box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  border-color: white;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+  border-radius: 25px;
+}
 .form-button {
   padding-left: 0px;
+}
+
+.map_align{
+  display: flex;
 }

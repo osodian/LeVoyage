@@ -24,10 +24,11 @@
   margin: 10px;
   padding:10px;
   height: 300px;
-  border-radius: 1px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
   display: flex;
   // align-items: center;
+
   justify-content: space-around;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -39,6 +40,7 @@
   font-size: 24px;
   font-weight: bold;
   color: white;
+  padding-top: -70px;
 }
 
 .info {
@@ -48,5 +50,5 @@
 
 .anti_link {
   text-decoration: none;
-  color: black;
+  color: white;
 }
