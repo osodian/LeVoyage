@@ -4,12 +4,23 @@ class TripsController < ApplicationController
   def index
     @trips = policy_scope(Trip)
 
+    # if params[:query].present?
+    #   @trips = Trip.where(destination: params[:query])
+    # else
+    #   @trips = Trip.all
+    # end
+    if params[:query].present?
+      @trips = Trip.where("destination ILIKE ?", "%#{params[:query]}%")
+    else
+      @trips = Trip.all
+    end
+
+
     @markers = @trips.geocoded.map do |trip|
       {
         lat: trip.latitude,
         lng: trip.longitude,
         info_window: render_to_string(partial: "info_window", locals: { trip: trip })
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
       }
     end
   end

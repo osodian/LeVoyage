@@ -18,7 +18,11 @@
       </li>
     </ul>
     <div class="nav-item grey anti_link m-3">
-      <%=link_to 'Bookings', bookings_path%>
+      <%= link_to 'Create Trip', new_trip_path %>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Bookings', new_trip_path%>
     </div>
 
     <div class="nav-item grey anti_link m-3">
@@ -43,16 +47,16 @@
         <h4 class="all_trips p-3">All Trips</h4>
   <form id="form_two">
   <div class="row m-1">
+
+
     <div class="col">
-      <input type="text" class="form-control" placeholder="Location">
+      <%= form_tag trips_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a Location"%>
+        <button type="button" id="best_button"class="anti_link btn" data-mdb-ripple-color="dark"><%= submit_tag "Search" %></button>
+      <% end %>
     </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Guests">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Check-in & Check-out">
-    </div>
-    <button type="button" id="best_button"class="anti_link btn" data-mdb-ripple-color="dark"><%= link_to 'Search', trips_path %></button>
+
+
   </div>
   </form>
 
