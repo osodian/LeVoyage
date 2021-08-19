@@ -18,6 +18,14 @@
       </li>
     </ul>
     <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to home page', root_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to List page', trips_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
       <%=link_to 'Bookings', bookings_path%>
     </div>
 
@@ -33,22 +41,149 @@
 
 <div class="detailed">
   <div>
-    <ul>
-      <% if @trip.photo.attached? %>
-        <li><%= cl_image_tag @trip.photo.key , height: 167, width: 300, crop: :fill %>
-      <% else %>
-        <h4>"No pictures"</h4>
-      <% end %>
-    <li><h3><%=@trip.destination%></h3></li>
-    <button type="button" class="btn btn-outline-primary"><%=link_to 'Book Trip', new_trip_booking_path(@trip), data: { confirm: "Are you sure?" }%></button>
+    <div class="show_trip_one p-2">
+
+        <% if @trip.photo.attached? %>
+          <%= cl_image_tag @trip.photo.key , height: 500, width: 700, crop: :fill %>
+        <% else %>
+          <h4>"No pictures"</h4>
+        <% end %>
+
+      <div class="sell_card">
+        <h4 class="all_trips" id="all_trips_city">Wonderful Trip to: <%=@trip.destination%></h4>
+
+        <p class="p-4 description"><%=@trip.details%></p>
+
+        <p class="p-4 price">Number of People who can go: <%=@trip.number_of_people%></p>
+
+        <p class="p-4 price">Price for the trip: $<%=@trip.price%></p>
+        <div class="nav-item grey anti_link m-3 price">
+          <%=link_to 'Book Trip', new_trip_booking_path(@trip), data: { confirm: "Are you sure?" }%>
+        </div>
+
+      </div>
+    </div>
   </div>
-
-  <li><p><%=@trip.details%></p></li>
-  <li><p><%=@trip.number_of_people%></p></li>
-  <li><p><%=@trip.price%></p></li>
-  </ul>
-
-  <%=link_to 'Back to home page', root_path%>
-  <br>
-  <%=link_to 'Back to List page', trips_path%>
 </div>
+
+<div class="col">
+      <%= form_tag trips_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Find a Location"%>
+        <button type="button" id="best_button"class="anti_link btn" data-mdb-ripple-color="dark"><%= submit_tag "Search" %></button>
+      <% end %>
+    </div>
+
+<!-- Footer -->
+<footer class="page-footer font-small grey">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Very long link 1</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 2</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Community</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Host</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Support</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <!-- Copyright -->
+
+</footer>
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://LeConciergeINC.com">LeConciergeINC.com</a>
+  </div>
+<!-- Footer -->
+</body>

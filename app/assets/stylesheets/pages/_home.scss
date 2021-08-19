@@ -38,6 +38,16 @@ h3 {
   background-size: cover;
   box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.2);
 }
+.flower_background {
+  background-image: asset-url('trips.webp');
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  background-size: cover;
+  box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.2);
+}
 
 .subheader {
   padding-top: 100px;
@@ -51,7 +61,7 @@ form {
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 #form_two{
-  background-color: #d3ebf1;
+  background-color: #ebb1e8;
 }
 
 
