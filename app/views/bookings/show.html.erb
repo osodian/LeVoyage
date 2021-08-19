@@ -18,6 +18,14 @@
       </li>
     </ul>
     <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to home page', root_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to List page', trips_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
       <%=link_to 'Bookings', bookings_path%>
     </div>
 
@@ -36,30 +44,135 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2>Booked Trip to: <%=@booking.trip.destination%></h2>
 
-<p>
-  <strong>User:</strong>
-  <%= @booking.user_id %>
-</p>
+
+
 
 <%# <%= link_to 'Edit', edit_booking_path(@booking) %>
-<div class="anti_link">
-  <%=link_to 'Back to home page', root_path%>
-  <br>
-  <%=link_to 'Back to List page', trips_path%>
-  <br>
-  <%=link_to 'Back to Bookings page', bookings_path%>
-</div>
+
 
 
 <%# LOUIS: %>
-<div class="">
-  <div>
-    <h1><%=@booking.trip.destination%> </h1>
+<div >
+  <div class="p-2 text-center " id="new_booking">
+    <h1>Booked Trip To: <%=@booking.trip.destination%> </h1>
   </div>
-  <p><%=@booking.date%></p>
-  <p><%=@booking.trip.details%></p>
-  <p><%=@booking.trip.number_of_people%></p>
-  <p><%=@booking.trip.price%></p>
+  <p class="p-3">Booked date for the trip: <%=@booking.date%></p>
+  <p class="p-3">Trip details: <%=@booking.trip.details%></p>
+  <p class="p-3">Number of people: <%=@booking.trip.number_of_people%></p>
+  <p class="p-3">Booking price: $<%=@booking.trip.price%></p>
 </div>
+
+<!-- Footer -->
+<footer class="page-footer font-small grey">
+
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Very long link 1</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 2</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Community</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Host</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Support</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <!-- Copyright -->
+
+</footer>
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://LeConciergeINC.com">LeConciergeINC.com</a>
+  </div>
+<!-- Footer -->
