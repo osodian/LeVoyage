@@ -84,3 +84,16 @@
   text-decoration: none;
   color: white;
 }
+.bookings_background {
+  background-image: asset-url('flowers.jpg');
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  background-size: cover;
+  box-shadow: 2px 3px 4px 1px rgba(0, 0, 0, 0.2);
+}
+#form_permanent {
+  background-color: white;
+}

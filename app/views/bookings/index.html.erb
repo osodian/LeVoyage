@@ -18,6 +18,14 @@
       </li>
     </ul>
     <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to home page', root_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to List page', trips_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
       <%=link_to 'Bookings', bookings_path%>
     </div>
 
@@ -37,9 +45,13 @@
 <p id="notice"><%= notice %></p>
 
 <%# LOUIS: %>
-<div class="anti_link" >
+<div class="anti_link bookings_background" >
   <h1>My bookings</h1>
-  <ol>
+
+
+  <%# <button type="button" class="button"><%=link_to 'See other available Trips', trips_path%>
+</div>
+  <ol class="anti_link m-4">
   <% @bookings.each do |booking|%>
     <li><%= link_to booking.trip.destination, booking_path(booking) %>
     <br>
@@ -52,11 +64,3 @@
     </li>
   <% end %>
   </ol>
-<div class="anti_link">
-  <%=link_to 'Back to home page', root_path%>
-  <br>
-  <%=link_to 'Back to List page', trips_path%>
-</div>
-
-  <%# <button type="button" class="button"><%=link_to 'See other available Trips', trips_path%>
-</div>

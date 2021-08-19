@@ -2,6 +2,14 @@
 
 .form {
   width: 800px;
+  display: inline-block;
+}
+.form-control_two{
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  border-radius: 16px;
+  padding: 12px;
 }
 
 .form-control {
@@ -82,3 +90,15 @@
 // .content {
 //   display: flex;
 // }
+.huge {
+  text-align: center;
+
+}
+
+.all_trips_four {
+  padding-top: 20px;
+  padding-left: 320px;
+  font-size: 30px;
+  text-align:left;
+  color: black;
+}

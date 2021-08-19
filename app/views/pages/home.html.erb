@@ -41,21 +41,13 @@
 <div class="subheader">
   <h1>Welcome to LeVoyage</h1>
   <h2>Your dream vacation is one click away</h2>
+  <h2>
+    <button type="button" id="best_buttons_two"class="anti_link btn" data-mdb-ripple-color="dark" id="destination"><%=link_to 'Search', trips_path%></button>
+  </h2>
+
+
 </div>
-<form>
-  <div class="row m-1">
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Location">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Guests">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Check-in & Check-out">
-    </div>
-    <button type="button" id="best_button"class="anti_link btn" data-mdb-ripple-color="dark"><%= link_to 'Search', trips_path %></button>
-  </div>
-</form>
+
 <div class="below-form">
   <h2 id="extreme_shadow">Bon Voyage!</h2>
 </div>
