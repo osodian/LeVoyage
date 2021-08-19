@@ -18,6 +18,14 @@
       </li>
     </ul>
     <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to home page', root_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
+      <%=link_to 'Back to List page', trips_path%>
+    </div>
+
+    <div class="nav-item grey anti_link m-3">
       <%=link_to 'Bookings', bookings_path%>
     </div>
 
@@ -37,19 +45,129 @@
 
 
 
-<h1>New Booking</h1>
 
 <%# <%= render '_form', booking: @booking %>
-<div class="anti_link">
-  <%=link_to 'Back to home page', root_path%>
-  <br>
-  <%=link_to 'Back to List page', trips_path%>
+<div class="p-2 text-center " id="new_booking">
+<h1 class="">Book trip to: <%=@trip.destination%></h1>
+    <div class="col" id="">
+      <%= simple_form_for [ @trip, @booking ] do |booking| %>
+        <%# <%= booking.association :trip %>
+        <%= booking.input :date %>
+        <%= booking.submit "Book this trip" %>
+      <% end %>
+    </div>
 </div>
 
-<h1>Book Trip to: <%=@trip.destination%></h1>
+<!-- Footer -->
+<footer class="page-footer font-small grey">
 
-<%= simple_form_for [ @trip, @booking ] do |booking| %>
-  <%# <%= booking.association :trip %>
-  <%= booking.input :date %>
-  <%= booking.submit "Book this trip" %>
-<% end %>
+  <!-- Footer Links -->
+  <div class="container text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">About</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Very long link 1</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 2</a>
+          </li>
+          <li>
+            <a href="#!">Very long link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Community</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Host</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mx-auto">
+
+        <!-- Links -->
+        <h5 class="font-weight-bold text-uppercase mt-3 mb-4">Support</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Link 1</a>
+          </li>
+          <li>
+            <a href="#!">Link 2</a>
+          </li>
+          <li>
+            <a href="#!">Link 3</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <!-- Copyright -->
+
+</footer>
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://LeConciergeINC.com">LeConciergeINC.com</a>
+  </div>
+<!-- Footer -->
